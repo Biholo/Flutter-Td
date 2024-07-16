@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:first_app/app.anonymous_page/card_hotel.dart';
+import 'package:first_app/common_widgets/custom_calendar.dart';
+import 'package:first_app/common_widgets/custom_search_bar.dart';
+import 'package:first_app/app.call_api/call_api.dart';
 
 class AnonymousPage extends StatelessWidget {
   const AnonymousPage({Key? key}) : super(key: key);
@@ -14,7 +17,6 @@ class AnonymousPage extends StatelessWidget {
           style: TextStyle(
             fontSize: 24.0,
             fontWeight: FontWeight.w600,
-
           ),
         ),
         centerTitle: true,
@@ -26,16 +28,31 @@ class AnonymousPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-           Container(
-            child:  const CardHotel(
-              assetName: 'images/hotel1.logo.png',
-              stars: 5,
-              address: 'Rua das Flores, 123',
-              notice: 4,
-              rangeKm: 2,
-              price: 200,
+            CustomSearchBar(
+              onChanged: (text) {
+                print('Recherche: $text');
+              },
+              hintText: 'Rechercher un hôtel',
+              color: Colors.white,
+              showButton: true,
+              textColor: Colors.black,
+              bgIcon: Color(0xFF6AD3C2),
+              colorIcon: Colors.white,
             ),
-           ),
+            CustomCalendar(),
+            const SizedBox(
+              height: 10.0,
+            ),
+            Container(
+              child: const CardHotel(
+                assetName: 'images/hotel1.logo.png',
+                stars: 5,
+                address: 'Rua das Flores, 123',
+                notice: 4,
+                rangeKm: 2,
+                price: 200,
+              ),
+            ),
             const SizedBox(
               height: 10.0,
             ),
@@ -62,7 +79,6 @@ class AnonymousPage extends StatelessWidget {
                 assetName: 'images/hotel3.logo.png',
               ),
             ),
-           
           ],
         ),
       ),

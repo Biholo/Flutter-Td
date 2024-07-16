@@ -2,6 +2,7 @@ import 'package:first_app/app.anonymous_page/anonymous_page.dart';
 import 'package:first_app/app.sign_in/social_sign_in_button.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app/common_widgets/custom_elevated_button.dart';
+import 'package:first_app/app.sign_in_form/sign_in_email.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -28,36 +29,7 @@ class SignInPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-            color: Colors.purple,
-            child: const SizedBox(
-              height: 100.0,
-              width: 100.0,
-            ),
-          ),
-          const SizedBox(
-            height: 50.0,
-          ),
-          Container(
-            color: Colors.blue,
-            child: const SizedBox(
-              height: 100.0,
-              width: 100.0,
-            ),
-          ),
-          const SizedBox(
-            height: 50.0,
-          ),
-          Container(
-            color: Colors.red,
-            child: const SizedBox(
-              height: 100.0,
-              width: 100.0,
-            ),
-          ),
-          const SizedBox(
-            height: 50.0,
-          ),
+            
           SocialSignInButton(
             assetName: 'images/google.logo.png',
             text: 'Sign in with Google',
@@ -83,10 +55,14 @@ class SignInPage extends StatelessWidget {
             height: 10.0,
           ),
           CustomElevatedButton(
-            child: const Text('Sign in with Twitch'),
+            child: const Text('Sign in with email'),
             color: Colors.purple,
             onPressed: () {
-              print('Button pressed');
+              Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => const SignInEmail()
+                ));
             },
           ),
           const SizedBox(

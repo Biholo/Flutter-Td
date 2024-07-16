@@ -41,19 +41,15 @@ class CardHotel extends StatelessWidget {
                   Expanded(
                     child: Stack(
                       children: [
-                        // Image principale
                         Image.asset(
                           assetName,
                           fit: BoxFit.cover,
-                          width: double
-                              .infinity, // Utilisez double.infinity pour remplir toute la largeur disponible
-                          height:
-                              150.0, // Hauteur fixée à 150.0, ajustez selon vos besoins
+                          width: double.infinity,
+                          height: 150.0,
                         ),
-                        // Conteneur positionné en absolute pour l'icône
                         Positioned(
-                          top: 10.0, // Ajustez la position verticale
-                          right: 10.0, // Ajustez la position horizontale
+                          top: 10.0,
+                          right: 10.0,
                           child: Container(
                             padding: EdgeInsets.all(5.0),
                             decoration: BoxDecoration(
@@ -64,17 +60,16 @@ class CardHotel extends StatelessWidget {
                                   color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 1,
                                   blurRadius: 2,
-                                  offset: Offset(
-                                      0, 1), // changes position of shadow
+                                  offset: Offset(0, 1),
                                 ),
                               ],
                             ),
                             child: Icon(
-IconData(0xf442, fontFamily: 'CupertinoIcons', fontPackage: 'cupertino_icons'),                            size:
-                                  16.0, // Ajustez la taille de l'icône selon vos besoins
-                              color: Color(
-                                  0xFF6AD3C2), // Couleur spécifique pour l'icône
-                            ),
+                                IconData(0xf442,
+                                    fontFamily: 'CupertinoIcons',
+                                    fontPackage: 'cupertino_icons'),
+                                size: 16.0,
+                                color: Color(0xFF6AD3C2)),
                           ),
                         ),
                       ],
@@ -83,8 +78,8 @@ IconData(0xf442, fontFamily: 'CupertinoIcons', fontPackage: 'cupertino_icons'), 
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 10.0, horizontal: 5.0), // ajustez l'espacement
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
